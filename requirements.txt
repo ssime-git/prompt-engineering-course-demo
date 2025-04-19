@@ -1,6 +1,5 @@
 jupyter
 jupyterlab
-jupyter_ai
 jupyter-ai[all]
 langchain
 langchain-community 
