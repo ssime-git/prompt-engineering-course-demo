@@ -1,7 +1,7 @@
 jupyter
 jupyterlab
 jupyter_ai
-jupyter_ai_magics
+jupyter-ai[all]
 langchain
 langchain-community 
 langchain-core
