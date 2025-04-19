@@ -1,8 +1,8 @@
 {
-    "name": "Jupyter AI with Ollama",
-    "build": {
-      "dockerfile": "../Dockerfile"
-    },
-    "forwardPorts": [8888, 11434],
-    "postStartCommand": "nohup bash -c 'ollama serve &' > /tmp/ollama.log 2>&1"
-  }
+  "name": "Jupyter AI with Ollama",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "forwardPorts": [8888, 11434],
+  "postStartCommand": "nohup bash -c 'ollama serve &' > /tmp/ollama.log 2>&1"
+}
