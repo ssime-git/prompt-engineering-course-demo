@@ -1,0 +1,6 @@
+jupyter
+jupyterlab
+jupyter_ai
+jupyter_ai_magics
+jupyter_ai_ollama
+langchain
