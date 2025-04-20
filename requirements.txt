@@ -1,7 +1,0 @@
-jupyter
-jupyterlab
-jupyter-ai[all]
-langchain
-langchain-community 
-langchain-core
-langchain-ollama

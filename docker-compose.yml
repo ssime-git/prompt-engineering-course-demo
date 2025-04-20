@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  jupyterlab:
+    image: jupyter/datascience-notebook:latest
+    container_name: jupyterlab-ai
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./jupyter_config:/home/jovyan/.jupyter
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - OLLAMA_API_BASE=http://host.docker.internal:11434/api
+      - OLLAMA_HOST=host.docker.internal:11434
+      - JUPYTER_AI_DEFAULT_PROVIDER=ollama
+      - JUPYTER_AI_DEFAULT_MODEL=llama3.2
+    networks:
+      - jupyter-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: >
+      bash -c "pip install jupyter-ai jupyter-ai-magics langchain-ollama numpy>=2.0.0 &&
+              jupyter server extension enable jupyter_ai &&
+              start-notebook.sh --NotebookApp.base_url=/ --NotebookApp.token='' --NotebookApp.password=''"
+    restart: unless-stopped
+
+networks:
+  jupyter-network:
+    driver: bridge
