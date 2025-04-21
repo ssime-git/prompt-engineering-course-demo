@@ -1,6 +1,8 @@
 jupyter
 jupyterlab
 jupyter-ai[all]
+jupyter-ai-magics
+"numpy<2.0"
 langchain
 langchain-community 
 langchain-core
