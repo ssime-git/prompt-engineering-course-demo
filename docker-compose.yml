@@ -20,7 +20,7 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     command: >
-      bash -c "pip install jupyter-ai jupyter-ai-magics langchain-ollama numpy>=2.0.0 &&
+      bash -c "pip install jupyter-ai jupyter-ai-magics langchain-ollama 'numpy<2.0' &&
               jupyter server extension enable jupyter_ai &&
               start-notebook.sh --NotebookApp.base_url=/ --NotebookApp.token='' --NotebookApp.password=''"
     restart: unless-stopped

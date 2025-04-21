@@ -1,0 +1,22 @@
+# Prompt Engineering
+Effective Prompt Engineering Techniques
+1. Specificity
+Creating specific and detailed prompts can help reduce the noise in generated responses and increase their accuracy.
+
+Avoid vague or open-ended questions that may yield irrelevant results.
+Use precise language to define what you want the model to achieve.
+Example: Instead of: "Write a story about a character who learns something new." Try: "Write a 200-word story about a character who discovers a hidden talent and overcomes their fear to perform in front of an audience."
+
+2. Contextualization
+Providing context can help the model understand the nuances of your request and generate more relevant responses.
+
+Include relevant background information or previous conversations.
+Use specific dates, times, locations, or events to ground the prompt in reality.
+Example: Instead of: "Write a summary of the latest news." Try: "Summarize the recent breakthroughs in renewable energy announced at the annual Green Technology Conference in New York City on March 15th."
+
+3. Evaluation Criteria
+Clearly defining what makes a successful response can help guide the model's generation process.
+
+Specify the desired tone, style, or format.
+Identify key performance indicators (KPIs) that measure success.
+Example: Instead of: "Write a poem about love." Try: "Compose a 12-line sonnet with a romantic tone and a structured rhyme scheme, using iambic pentameter."
