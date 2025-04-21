@@ -13,8 +13,6 @@ services:
       - JUPYTER_ENABLE_LAB=yes
       - OLLAMA_API_BASE=http://host.docker.internal:11434/api
       - OLLAMA_HOST=host.docker.internal:11434
-      - JUPYTER_AI_DEFAULT_PROVIDER=ollama
-      - JUPYTER_AI_DEFAULT_MODEL=llama3.2
     networks:
       - jupyter-network
     extra_hosts:
@@ -22,7 +20,9 @@ services:
     command: >
       bash -c "pip install jupyter-ai jupyter-ai-magics langchain-ollama 'numpy<2.0' &&
               jupyter server extension enable jupyter_ai &&
-              start-notebook.sh --NotebookApp.base_url=/ --NotebookApp.token='' --NotebookApp.password=''"
+              mkdir -p /home/jovyan/.jupyter/lab/user-settings/jupyter-ai &&
+              echo '{\"defaultLanguageModel\":\"ollama:llama3.2\"}' > /home/jovyan/.jupyter/lab/user-settings/jupyter-ai/plugin.jupyterlab-settings &&
+              start-notebook.sh --NotebookApp.base_url=/ --NotebookApp.token='' --NotebookApp.password='' --AiExtension.default_language_model=ollama:llama3.2"
     restart: unless-stopped
 
 networks:
